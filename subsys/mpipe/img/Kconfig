@@ -1,0 +1,12 @@
+# Copyright 2026 NXP
+# SPDX-License-Identifier: Apache-2.0
+
+config MPIPE_IMG
+	bool "Image codec plugin support"
+	help
+	  Common namespace for image parsers, encoders, and decoders. Parsers
+	  recover complete images from byte streams, while codec elements consume
+	  and produce complete image buffers.
+
+	  Enabling this option alone does not select a codec implementation or
+	  reserve codec buffers. Each parser and codec has its own option.
