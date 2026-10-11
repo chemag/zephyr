@@ -1,0 +1,8 @@
+tests:
+  mpipe.fs.round_trip:
+    tags:
+      - subsys
+      - mpipe
+      - filesystem
+    platform_allow:
+      - native_sim/native/64
