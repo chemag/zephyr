@@ -1,0 +1,11 @@
+# SPDX-FileCopyrightText: Copyright The Zephyr Project Contributors
+# SPDX-License-Identifier: Apache-2.0
+
+config ZEPHYR_JPEGENC_MODULE
+	bool
+
+config JPEGENC
+	bool "JPEGENC JPEG encoder library"
+	depends on ZEPHYR_JPEGENC_MODULE
+	help
+	  Enable the JPEGENC software JPEG encoder library.

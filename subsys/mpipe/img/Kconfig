@@ -10,3 +10,37 @@ config MPIPE_IMG
 
 	  Enabling this option alone does not select a codec implementation or
 	  reserve codec buffers. Each parser and codec has its own option.
+
+if MPIPE_IMG
+
+config MPIPE_IMG_JPEG_ENCODER
+	bool "Software JPEG encoder element"
+	depends on ZEPHYR_JPEGENC_MODULE
+	select JPEGENC
+	help
+	  Build the software JPEG encoder element using the external JPEGENC
+	  module. The encoder accepts RGB565, planar YUV420, or NV12 frames on
+	  its sink pad and produces JPEG frames on its source pad.
+
+config MPIPE_IMG_JPEG_ENCODER_POOL_NUM
+	int "Number of buffers in the JPEG encoder's output pool"
+	depends on MPIPE_IMG_JPEG_ENCODER
+	range 1 255
+	default 2
+	help
+	  Number of buffers in the software JPEG encoder's internal output
+	  pool. Two to three buffers allow pipelining with one frame being
+	  encoded while another is in flight.
+
+config MPIPE_IMG_JPEG_ENCODER_MAX_OUT_FRAME_SIZE
+	int "Maximum encoded output frame size in bytes"
+	depends on MPIPE_IMG_JPEG_ENCODER
+	range 1 65535
+	default 65535
+	help
+	  Maximum encoded JPEG frame size for the software JPEG encoder's
+	  internal single-buffer pool. Zephyr net_buf lengths are 16-bit, so
+	  larger JPEG frames require a downstream pool with a different storage
+	  strategy.
+
+endif # MPIPE_IMG

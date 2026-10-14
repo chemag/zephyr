@@ -23,6 +23,8 @@ manifest:
       url-base: https://github.com/zephyrproject-rtos
     - name: babblesim
       url-base: https://github.com/BabbleSim
+    - name: chemag
+      url-base: https://github.com/chemag
 
   group-filter: [-babblesim, -optional, -testing]
 
@@ -296,6 +298,10 @@ manifest:
     - name: hostap
       path: modules/lib/hostap
       revision: 33921a8a77c56bddfe196a11935009cededc3bb3
+    - name: jpegenc
+      remote: chemag
+      revision: 670cc57c012cce3b24ea68a41112ca80b686f7db
+      path: modules/lib/jpegenc
     - name: liblc3
       revision: 48bbd3eacd36e99a57317a0a4867002e0b09e183
       path: modules/lib/liblc3
