@@ -10,3 +10,35 @@ config MPIPE_IMG
 
 	  Enabling this option alone does not select a codec implementation or
 	  reserve codec buffers. Each parser and codec has its own option.
+
+if MPIPE_IMG
+
+config MPIPE_IMG_JPEG_DECODER
+	bool "Software JPEG decoder element"
+	depends on ZEPHYR_JPEGDEC_MODULE
+	select JPEGDEC
+	help
+	  Build the software JPEG decoder element using the external JPEGDEC
+	  module. The decoder accepts complete JPEG images on its sink pad and
+	  produces RGB565, YUV420, or NV12 frames on its source pad.
+
+config MPIPE_IMG_JPEG_DECODER_POOL_NUM
+	int "Number of buffers in the JPEG decoder's output pool"
+	depends on MPIPE_IMG_JPEG_DECODER
+	range 1 255
+	default 2
+	help
+	  Number of buffers in the software JPEG decoder's internal output pool.
+
+config MPIPE_IMG_JPEG_DECODER_MAX_OUT_FRAME_SIZE
+	int "Maximum decoded output frame size in bytes"
+	depends on MPIPE_IMG_JPEG_DECODER
+	range 1 65535
+	default 65535
+	help
+	  Maximum decoded frame size for the software JPEG decoder's internal
+	  single-buffer pool. Zephyr net_buf lengths are 16-bit, so larger
+	  decoded frames require a downstream pool with a different storage
+	  strategy.
+
+endif # MPIPE_IMG

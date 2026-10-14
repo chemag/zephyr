@@ -1,5 +1,8 @@
 # Copyright 2026 NXP
 # SPDX-License-Identifier: Apache-2.0
 
-# Image parser and codec sources are added by independently selectable
-# element configurations.
+if(CONFIG_MPIPE_IMG_JPEG_DECODER)
+  zephyr_library_sources(
+    mpipe_img_jpeg_decoder.c
+  )
+endif()
