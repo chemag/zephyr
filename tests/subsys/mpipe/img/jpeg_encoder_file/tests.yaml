@@ -1,0 +1,11 @@
+tests:
+  mpipe.img.jpeg_encoder.file:
+    tags:
+      - subsys
+      - mpipe
+      - filesystem
+      - jpeg
+    platform_allow:
+      - native_sim/native/64
+    integration_platforms:
+      - native_sim/native/64

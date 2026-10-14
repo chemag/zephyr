@@ -1,0 +1,12 @@
+# SPDX-FileCopyrightText: Copyright The Zephyr Project Contributors
+# SPDX-License-Identifier: Apache-2.0
+
+mainmenu "mpipe JPEG encoder file test"
+
+source "Kconfig.zephyr"
+
+config MPIPE_JPEG_ENCODER_FILE_KEEP_FILES
+	bool "Keep generated input and JPEG files"
+	help
+	  Preserve input.rgb565 and output.jpg in the native test filesystem
+	  after a successful test so they can be inspected manually.
