@@ -4361,6 +4361,8 @@ Multimedia Pipeline:
   files:
     - doc/services/mpipe/
     - include/zephyr/mpipe/
+    - modules/jpegdec/
+    - modules/jpegenc/
     - subsys/mpipe/
     - tests/subsys/mpipe/
   labels:
@@ -7473,6 +7475,28 @@ West:
     - "area: Wi-Fi"
   tests:
     - net.wifi
+
+"West project: jpegdec":
+  status: maintained
+  maintainers:
+    - ngphibang
+  collaborators:
+    - josuah
+  files:
+    - modules/jpegdec/
+  labels:
+    - "area: Multimedia Pipeline"
+
+"West project: jpegenc":
+  status: maintained
+  maintainers:
+    - ngphibang
+  collaborators:
+    - josuah
+  files:
+    - modules/jpegenc/
+  labels:
+    - "area: Multimedia Pipeline"
 
 "West project: liblc3":
   status: maintained
