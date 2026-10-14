@@ -298,6 +298,10 @@ manifest:
     - name: hostap
       path: modules/lib/hostap
       revision: 33921a8a77c56bddfe196a11935009cededc3bb3
+    - name: jpegdec
+      remote: chemag
+      revision: cbc9673112909b4fb744052e50a786fa9ee19d52
+      path: modules/lib/jpegdec
     - name: jpegenc
       remote: chemag
       revision: 670cc57c012cce3b24ea68a41112ca80b686f7db

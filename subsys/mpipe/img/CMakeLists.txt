@@ -6,3 +6,9 @@ if(CONFIG_MPIPE_IMG_JPEG_ENCODER)
     mpipe_img_jpeg_encoder.c
   )
 endif()
+
+if(CONFIG_MPIPE_IMG_JPEG_DECODER)
+  zephyr_library_sources(
+    mpipe_img_jpeg_decoder.c
+  )
+endif()
