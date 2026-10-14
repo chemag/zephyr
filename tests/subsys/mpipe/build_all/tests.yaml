@@ -67,6 +67,19 @@ tests:
       - CONFIG_MPIPE_IMG=y
       - CONFIG_MPIPE_IMG_JPEG_ENCODER=y
 
+  mpipe.img.jpeg_codecs.build:
+    tags:
+      - subsys
+      - mpipe
+    build_only: true
+    platform_allow:
+      - native_sim/native/64
+    extra_args:
+      - CONFIG_CPP=y
+      - CONFIG_MPIPE_IMG=y
+      - CONFIG_MPIPE_IMG_JPEG_DECODER=y
+      - CONFIG_MPIPE_IMG_JPEG_ENCODER=y
+
   mpipe.fs.build:
     tags:
       - subsys

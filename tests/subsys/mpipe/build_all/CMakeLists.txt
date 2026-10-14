@@ -4,3 +4,10 @@ project(build_all)
 
 file(GLOB app_sources src/*.c)
 target_sources(app PRIVATE ${app_sources})
+
+if(CONFIG_MPIPE_IMG_JPEG_ENCODER AND CONFIG_MPIPE_IMG_JPEG_DECODER)
+  target_sources(app PRIVATE
+    src/jpeg_headers_cpp_dec_first.cpp
+    src/jpeg_headers_cpp_enc_first.cpp
+  )
+endif()

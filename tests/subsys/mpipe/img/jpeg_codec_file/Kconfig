@@ -1,0 +1,12 @@
+# SPDX-FileCopyrightText: Copyright The Zephyr Project Contributors
+# SPDX-License-Identifier: Apache-2.0
+
+mainmenu "mpipe JPEG codec file test"
+
+source "Kconfig.zephyr"
+
+config MPIPE_JPEG_CODEC_FILE_KEEP_FILES
+	bool "Keep JPEG codec round-trip test files"
+	help
+	  Preserve each round-trip test's input and output under descriptive
+	  filenames for manual inspection.
